@@ -19,14 +19,6 @@ RUN set -xe && \
 RUN set -xe && \
 	apt-get clean all
 
-#ENV DB_HOST ""
-#ENV DB_USERNAME ""
-#ENV DB_PASSWORD ""
-#ENV DB_DATABASE ""
-#ENV TARGET_S3_BUCKET ""
-#ENV AWS_ACCESS_KEY_ID ""
-#ENV AWS_SECRET_ACCESS_KEY ""
-
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT /docker-entrypoint.sh
