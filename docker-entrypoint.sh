@@ -37,5 +37,5 @@ echo "Creating local database dump..."
 mysqldump -u${DB_USERNAME} -p${DB_PASSWORD} -h ${DB_HOST} ${DB_DATABASE} | gzip > /tmp/db/db_snapshot.sql.gz
 BACKUP_DATE=$(date +%Y%m%d%H%M%S)
 echo "Pushing database snapshot to S3"
-aws s3 cp /tmp/db/db_snapshot.sql.gz s3://${TARGET_S3_BUCKET}/cerecdoctors-backup-${BACKUP_DATE}.sql.gz
+aws s3 cp /tmp/db/db_snapshot.sql.gz s3://${TARGET_S3_BUCKET}/db_snapshot-${BACKUP_DATE}.sql.gz
 echo "Done."
